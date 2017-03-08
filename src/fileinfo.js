@@ -12,3 +12,25 @@ var getFileInfo = function ()
 var Analyse = function () {
     CodeAnalyse.analyse();
 };
+
+var comment = function () {
+    var n_start_index = undefined;
+    var n_end_index = undefined;
+    return { 
+        setStart:function(nValue)
+        {
+            n_start_index = nValue;
+        },
+        setEnd:function(nValue)
+        {
+            n_end_index = nValue;
+        },
+        getStart:function()
+        {
+            return n_start_index;
+        },
+        getEnd: function () {
+           return  n_end_index ;
+        }
+    };
+};
