@@ -2,6 +2,7 @@ var CodeAnalyse = function () {
     var _sCode = "";
     var _sResultCode = "";
     var _commontList = new  Array;
+	var _notes =[];
     var _setCode = function (sCode) {
         _sCode = sCode;
     };
@@ -34,8 +35,7 @@ var CodeAnalyse = function () {
             }
             var b_success = perfunction(n_index, _sCode, n_length);
             if (b_success == true)
-                return n_index;
-
+                return n_index; 
         }
         return undefined;
     };
@@ -87,10 +87,32 @@ var CodeAnalyse = function () {
             var n_start = _commontList[i].getStart();
             var n_end = _commontList[i].getEnd();
             if(undefined != n_start && undefined != n_end)
-                _sResultCode += _sCode.substr(n_start, (n_end - n_start));
+			{
+				var note_obj = new Note();
+				var a_commont = _sCode.substr(n_start, (n_end - n_start)); 
+				note_obj.setText(a_commont);
+				_notes.push(note_obj);
+			}
+                
         }
-
+		_showText();
     };
+	var _showText = function(){
+		var text_area = document.getElementById("result_text");
+		if(text_area)
+		{
+			text_area.innerText ="";
+			var n_size = _notes.length;
+			for(var i=0;i<n_size;i++)
+			{
+				text_area.innerText += "第"+(i+1)+"个注释\n";
+				text_area.innerText +="******************************\n";
+				text_area.innerText += _notes[i].getText();
+				text_area.innerText += "\n******************************\n";
+			}
+		}
+			
+	};
     var _getResult = function () {
         return _sResultCode;
     };
