@@ -5,15 +5,18 @@
 <script type="text/javascript" src="src/fileinfo.js"></script> 
 <script type="text/javascript" src="src/code_analyse.js"></script> 
 <script type="text/javascript" src="src/note.js"></script> 
+<script type="text/javascript" src="src/file_select_and_drag.js"></script>
 </head> 
 
 <!-背景 start -->
-<body style="background-color:darkgrey;width:100%; height:100%;"> 
+<body style="filter:alpha(opacity=0);background-color:darkgrey;width:100%; height:100%;"> 
 </body>
 <!-背景 end-->
 
 <!-拖拽文件窗口 start-->
-<iframe> iframetest  </iframe>
+<div id="file_select_div" onmousemove='fileSelectonMouseMove();'> 
+<iframe id="file_select_frame" > iframetest  </iframe>
+</div>
 <!-拖拽文件窗口 end-->
 <body>  
 <input id ="fileinput" type="file" name="file" onchange="getFileInfo()"/>
