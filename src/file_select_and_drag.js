@@ -6,5 +6,3 @@ var fileSelectonMouseMove = function()
     file_view.style["margin-left"] =  x;
     file_view.style["margin-top"] = y;     
 }
-
- 

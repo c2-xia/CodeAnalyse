@@ -8,6 +8,13 @@ var getFileInfo = function ()
     }
     reader.readAsText(one_file); 
 };
+var onDragOneFile = function (one_file) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        CodeAnalyse.setcode(this.result);
+    }
+    reader.readAsText(one_file);  
+};
 
 var Analyse = function () {
     CodeAnalyse.analyse();
