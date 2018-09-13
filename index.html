@@ -1,11 +1,11 @@
 ﻿<html> 
 <head> 
 <title> New Document </title> 
-<meta http-equiv="content-type" content="text/html;charset=utf-8"> 
+<meta http-equiv="content-type" content="text/html ; charset=utf-8"> 
 
 <script type="text/javascript" src="src/lib/jquery-3.2.1.js"></script> 
 <script type="text/javascript" src="src/fileinfo.js"></script> 
-<script type="text/javascript" src="src/main.js"></script> 
+
 <script type="text/javascript" src="src/code_analyse.js"></script> 
 <script type="text/javascript" src="src/note.js"></script> 
 <script type="text/javascript" src="src/file_select_and_drag.js"></script>
@@ -13,13 +13,15 @@
 
 
 <!-背景 start -->
-<div id ="drag_file_div"style="background-color:darkgrey;width:500px; height:300px;">
+<div id ="drag_file_div" style="background-color:darkgrey;width:500px; height:300px;" >
     <p>把你想分析的文件拖拽到此处或</p>
     <input id="fileinput" type="file" name="file" onchange="getFileInfo()" /> 
     <br>  
 </div>
 <!-背景 end-->
 
+ 
+<script type="text/javascript" src="src/main.js"></script> 
 <button id="anilyse_btn" onclick="Analyse()">分析</button> 
 <p id="result_text">test</p>
 

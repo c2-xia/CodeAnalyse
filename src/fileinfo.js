@@ -1,17 +1,23 @@
 var getFileInfo = function ()
 {
     var fileinput_element = document.getElementById("fileinput");
-    var one_file = fileinput_element.files[0];
-    var reader = new FileReader();
-    reader.onload = function (e) {
-        CodeAnalyse.setcode( this.result); 
-    }
-    reader.readAsText(one_file); 
+     
+     var list = fileinput_element.files;
+        for (var i = 0; i < list.length; i++) {
+            var one_file = list[i];
+            onDragOneFile(one_file);
+        }
 };
+
+var getFileInfoWithDrag = function(e)
+{
+    var fileinput_element = document.getElementById("fileinput");
+    fileinput_element.files = e.dataTransfer.files ;
+}
 var onDragOneFile = function (one_file) {
     var reader = new FileReader();
     reader.onload = function (e) {
-        CodeAnalyse.setcode(this.result);
+       CodeAnalyse.setcode(this.result);
     }
     reader.readAsText(one_file);  
 };

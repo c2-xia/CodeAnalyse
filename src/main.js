@@ -20,17 +20,15 @@ $(function () {
         }
     });
      
-    var box = document.getElementById('drag_file_div'); //拖拽区域 
-    box.addEventListener("drop", function (e) {
+    document.getElementById('drag_file_div').addEventListener("drop", function (e) {
         e.preventDefault(); //取消默认浏览器拖拽效果 
         var fileList = e.dataTransfer.files; //获取文件对象 
         //检测是否是拖拽文件到页面的操作 
         if (fileList.length == 0) {
             return false;
         }
-        //先获取第一个文件的信息
-        var file = fileList[0];
-        onDragOneFile(file);         
+        var fileinput_element = document.getElementById("fileinput");
+        fileinput_element.files = e.dataTransfer.files ;    
     }, false); 
 
 
