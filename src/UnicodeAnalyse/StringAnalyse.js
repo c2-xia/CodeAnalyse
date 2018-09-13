@@ -1,0 +1,7 @@
+var UnicodeStringAnalyse = new function()
+{
+	
+
+
+
+}();

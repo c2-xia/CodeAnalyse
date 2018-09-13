@@ -4,31 +4,35 @@ function main (){
 }
 
 $(function () {
-    //вХж╧Д╞ююфВд╛хопп║ё 
+    //О©╫О©╫ж╧О©╫О©╫О©╫О©╫О©╫д╛О©╫О©╫О©╫п║О©╫ 
     $(document).on({
-        dragleave: function (e) {    //моюК 
+        dragleave: function (e) {    //О©╫О©╫О©╫О©╫ 
             e.preventDefault();
         },
-        drop: function (e) {  //мо╨С╥е 
+        drop: function (e) {  //О©╫о╨О©╫О©╫ 
             e.preventDefault();
         },
-        dragenter: function (e) {    //мо╫Ь 
+        dragenter: function (e) {    //О©╫о╫О©╫ 
             e.preventDefault();
         },
-        dragover: function (e) {    //мою╢мох╔ 
+        dragover: function (e) {    //О©╫О©╫О©╫О©╫О©╫О©╫х╔ 
             e.preventDefault();
         }
     });
      
     document.getElementById('drag_file_div').addEventListener("drop", function (e) {
-        e.preventDefault(); //х║оШд╛хоД╞ююфВмов╖п╖╧Ш 
-        var fileList = e.dataTransfer.files; //╩Ях║нд╪Ч╤тоС 
-        //╪Л╡Бйг╥Яйгмов╖нд╪Ч╣╫рЁцФ╣д╡ывВ 
+        e.preventDefault(); //х║О©╫О©╫д╛О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫в╖п╖О©╫О©╫ 
+        var fileList = e.dataTransfer.files; //О©╫О©╫х║О©╫д╪О©╫О©╫О©╫О©╫О©╫ 
+        //О©╫О©╫О©╫О©╫г╥О©╫О©╫О©╫О©╫О©╫в╖О©╫д╪О©╫О©╫О©╫рЁО©╫О©╫д╡О©╫О©╫О©╫ 
         if (fileList.length == 0) {
             return false;
         }
         var fileinput_element = document.getElementById("fileinput");
         fileinput_element.files = e.dataTransfer.files ;    
+		var userAgent = navigator.userAgent; //Е▐√Е╬≈Ф╣▐Х╖┬Е≥╗Г └userAgentЕ╜≈Г╛╕Д╦╡
+		var isEdge = userAgent.indexOf("Edge") > -1; //Е┬╓Ф√╜Ф≤╞Е░╕IEГ └EdgeФ╣▐Х╖┬Е≥╗
+		if(isEdge)
+			getFileInfo();
     }, false); 
 
 
